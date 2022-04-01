@@ -19,12 +19,6 @@ According to Regression model, Y is quantitative, which is Numerical values, for
 
 
 
-3.
-regression model = MSE, RMSE, MAE
-classification model = Accuracy, Confusion Matrix
-
-
-
 4.
 Predictive : Aim is to predict Y with minimum reducible error, and not focused on hypothesis tests.
 
@@ -33,14 +27,20 @@ Descriptive : Choose model to best visually emphasize a trend in data, for examp
 Inferential : Aim is to test theories, and state relationship between outcome & predictor. 
 
 
+5.
+mechanistic model predicts the future based on a theory. An empirical model, sometimes called statistical model, relies on observation rather than theory. The idea is that if you observe some particular outcome following some particular circumstance then you can reliable predict that outcome in the future. Both of models are able to accurately predict the future. 
+
+Empirical model works well and needs no special equipment beyond wristwatch. This is common theme, especially when the prediction concerns a more complex, or less well understood, phenomenon.
+
+Bias variance trade off is a property of predictive models in supervised learning. 
+
+Describe how the bias-variance tradeoff is related to the use of mechanistic or empirically-driven models.
 
 
+6.
+I would like to say first one is predictive because predictive modeling solutions are a form of data-mining technology that works by analyzing historical and current data and generating a model to help predict future outcomes, which means using a given voter's profile/data to predict voting on future candidate. 
 
-
-
-
-
-
+I would like to say second one is inferential, because there is no historical and current data that can generating a model to help predict future outcomes.
 
 
 
@@ -57,6 +57,8 @@ library(ggplot2)
 ```{r}
 ggplot(mpg, aes(x=hwy)) + geom_histogram()
 ```
+hwy is indiciated on the x value, and count is naturally indiciated on y value.
+
 
 
 #2
@@ -64,14 +66,24 @@ ggplot(mpg, aes(x=hwy)) + geom_histogram()
 ggplot(mpg, aes(x=hwy, y=cty)) + geom_point()
 
 ```
+There is a cofrrelation between hwy and cty, which means when hwy goes up, cty goes up as well. 
+
+
 
 
 #3
 ```{r}
-ggplot(mpg, aes(x = manufacturer)) + geom_bar() + coord_flip()
+install.packages("forcats")
+library(forcats)
+library(ggplot2)
+library(tidyverse)
+mpg %>%
+  ggplot(aes(x = fct_infreq(manufacturer))) +
+  geom_bar() + coord_flip() + 
+  labs(x = "count")
 ```
 
-
+Dodge produced the most, and lincoln produced the least.
 
 
 
@@ -82,14 +94,10 @@ ggplot(mpg, aes(x = manufacturer)) + geom_bar() + coord_flip()
 install.packages("tidyverse")
 library(tidyverse)
 
-library(ggplot2)
-
-data(mpg)
-
-boxplot(hwy ~ cyl, data = mpg,col = c("green", "green", "green","green"))
-
+```{r}
 ggplot(mpg, aes(group = cyl, y = hwy)) + geom_boxplot()
 
+```
 
 From the above output, the following are interpreted,
 
@@ -102,14 +110,18 @@ The lowest and highest value of cyl is having outliers.
 #5
 install.packages("corrplot")
 library(corrplot)
-M <- cor(mpg)
-head(mpg)
-my_data <- filter(mpg, displ, cyl, cty, hwy)
-M = cor(my_data)
+```{r}
+M = cor(mpg %>% dplyr::select(where(is.numeric)))
+corrplot(M,method ="number", type="lower")
+```
 
+Variables that move in same direction i.e. in tandem will have positive correlation that means one variable increases if another variable increases and vice versa, and the variables that move in opposite direction will have negative correlation that means here the value of a variable decreases if another variable increases and vice versa
 
-head(round(M,2))
+A positive correlation is observed in many situations for example we can see a correlation between the demand for a product and the product's associated price. In situations where the available supply stays the same, the price will rise if demand increases, this is example of positive correlation
 
-corrplot(M, type="lower")
+Examples for negative correlation is if the availability of the product is high then there may be chance to get price reduced
+
+So we see many situations that follow these relations. Hence they make sense
+
 
 
