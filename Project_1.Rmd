@@ -34,7 +34,7 @@ Empirical model works well and needs no special equipment beyond wristwatch. Thi
 
 Bias variance trade off is a property of predictive models in supervised learning. 
 
-Describe how the bias-variance tradeoff is related to the use of mechanistic or empirically-driven models.
+
 
 
 6.
@@ -43,15 +43,13 @@ I would like to say first one is predictive because predictive modeling solution
 I would like to say second one is inferential, because there is no historical and current data that can generating a model to help predict future outcomes.
 
 
-
-
-
-install.packages("tidyverse")
-install.packages("tidymodels")
-install.packages("ISLR")
-install.packages("ggplot2")
+```{r}
 
 library(ggplot2)
+```
+
+
+
 
 #1
 ```{r}
@@ -73,7 +71,7 @@ There is a cofrrelation between hwy and cty, which means when hwy goes up, cty g
 
 #3
 ```{r}
-install.packages("forcats")
+install.packages("forcats", repos = "http://cran.us.r-project.org")
 library(forcats)
 library(ggplot2)
 library(tidyverse)
@@ -108,9 +106,11 @@ The lowest and highest value of cyl is having outliers.
 
 
 #5
-install.packages("corrplot")
-library(corrplot)
+
 ```{r}
+install.packages("corrplot",repos = "http://cran.us.r-project.org")
+library(corrplot)
+
 M = cor(mpg %>% dplyr::select(where(is.numeric)))
 corrplot(M,method ="number", type="lower")
 ```
