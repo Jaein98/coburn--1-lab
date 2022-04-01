@@ -9,20 +9,107 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## R Markdown
 
-This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+Question 1:
+Supervised learning is the machine learning task of learning a function that maps an input to an output based on example input-output pairs. Unsupervised learning is a type of algorithm that learns patterns from untagged data. For Supervised learning, for each observation of predictor measurements(s) xi, i = 1,...,n there is an associated response measurement yi. We wish to fit a model that relates the response to the predictors, with the aim of accurately predicting the response for future observartions or better understanding the relationship between the response and the predictors(page #26 of book). By contrast, unsupervised learning describes the somewhat more challenging situation in which for every observation i = 1, ...,n, we observe a vector of measurement xi, but no associated response yi (page #26 of book).Supervised learning methods such as Linear regresssion, Logistic regression, k-nearest(. However, unsupervised learning is not possible to fit linear regression model, since there is no response varaible to predict(page #26 of book.) 
 
-When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
 
-```{r cars}
-summary(cars)
+
+Question 2:
+According to Regression model, Y is quantitative, which is Numerical values, for example price, blood, and pressure. According to Classification model, Y is qualitative, which is categorical values for example survived/died, spam/not spam (Lecture 2). However, the distinction is not always that crisp(page #28 of book.). Least squares linear regression is used with a quantitative response, whereas logistic regression is typically used with a qualitative response. Thus, despite its name, logistic regression is a classification method(page #28 of book.). But since it estimates class probabilities, it can be taught of as a regression method as well(page #28 of book.)
+
+
+
+3.
+regression model = MSE, RMSE, MAE
+classification model = Accuracy, Confusion Matrix
+
+
+
+4.
+Predictive : Aim is to predict Y with minimum reducible error, and not focused on hypothesis tests.
+
+Descriptive : Choose model to best visually emphasize a trend in data, for example using a line on a scatterplot
+
+Inferential : Aim is to test theories, and state relationship between outcome & predictor. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+install.packages("tidyverse")
+install.packages("tidymodels")
+install.packages("ISLR")
+install.packages("ggplot2")
+
+library(ggplot2)
+
+#1
+```{r}
+ggplot(mpg, aes(x=hwy)) + geom_histogram()
 ```
 
-## Including Plots
 
-You can also embed plots, for example:
+#2
+```{r}
+ggplot(mpg, aes(x=hwy, y=cty)) + geom_point()
 
-```{r pressure, echo=FALSE}
-plot(pressure)
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+
+#3
+```{r}
+ggplot(mpg, aes(x = manufacturer)) + geom_bar() + coord_flip()
+```
+
+
+
+
+
+
+
+#4
+
+install.packages("tidyverse")
+library(tidyverse)
+
+library(ggplot2)
+
+data(mpg)
+
+boxplot(hwy ~ cyl, data = mpg,col = c("green", "green", "green","green"))
+
+ggplot(mpg, aes(group = cyl, y = hwy)) + geom_boxplot()
+
+
+From the above output, the following are interpreted,
+
+If the value of cyl is high, hwy value is decreased.
+If the value of cyl is low, hwy value is increased.
+The lowest and highest value of cyl is having outliers.
+
+
+
+#5
+install.packages("corrplot")
+library(corrplot)
+M <- cor(mpg)
+head(mpg)
+my_data <- filter(mpg, displ, cyl, cty, hwy)
+M = cor(my_data)
+
+
+head(round(M,2))
+
+corrplot(M, type="lower")
+
+
