@@ -30,10 +30,9 @@ Inferential : Aim is to test theories, and state relationship between outcome & 
 5.
 mechanistic model predicts the future based on a theory. An empirical model, sometimes called statistical model, relies on observation rather than theory. The idea is that if you observe some particular outcome following some particular circumstance then you can reliable predict that outcome in the future. Both of models are able to accurately predict the future. 
 
-Empirical model works well and needs no special equipment beyond wristwatch. This is common theme, especially when the prediction concerns a more complex, or less well understood, phenomenon.
+mechanistic parametric is easier to understand because it is hard to understand when there is many variable, just like empirically driven model is much more flexible by default and being non-parametric.
 
-Bias variance trade off is a property of predictive models in supervised learning. 
-
+In statistics and machine learning, the bias–variance tradeoff is the property of a model that the variance of the parameter estimated across samples can be reduced by increasing the bias in the estimated parameters. over fitting means low variance and high bias. So, Empirically driven model, which is more flexible, has low variance and high bias. The reason why is the high flexibility indicate the posibbility of over fitting. Oppositly, mechanistic model such as linear/logistic model are less flexible compare to empirically driven model, so they have high variance and low bias. 
 
 
 
@@ -55,7 +54,7 @@ library(ggplot2)
 ```{r}
 ggplot(mpg, aes(x=hwy)) + geom_histogram()
 ```
-hwy is indiciated on the x value, and count is naturally indiciated on y value.
+hwy is indiciated on the x value, and count is naturally indiciated on y value. I learned y value can be naturally identified on the graph with "count" on it even though I do not need to set up the y value on ggplot. 
 
 
 
