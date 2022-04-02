@@ -19,7 +19,7 @@ According to Regression model, Y is quantitative, which is Numerical values, for
 
 
 
-4.
+Question 4.
 Predictive : Aim is to predict Y with minimum reducible error, and not focused on hypothesis tests.
 
 Descriptive : Choose model to best visually emphasize a trend in data, for example using a line on a scatterplot
@@ -27,7 +27,7 @@ Descriptive : Choose model to best visually emphasize a trend in data, for examp
 Inferential : Aim is to test theories, and state relationship between outcome & predictor. 
 
 
-5.
+Question 5.
 mechanistic model predicts the future based on a theory. An empirical model, sometimes called statistical model, relies on observation rather than theory. The idea is that if you observe some particular outcome following some particular circumstance then you can reliable predict that outcome in the future. Both of models are able to accurately predict the future. 
 
 mechanistic parametric is easier to understand because it is hard to understand when there is many variable, just like empirically driven model is much more flexible by default and being non-parametric.
@@ -36,7 +36,7 @@ In statistics and machine learning, the bias–variance tradeoff is the property
 
 
 
-6.
+Question 6.
 I would like to say first one is predictive because predictive modeling solutions are a form of data-mining technology that works by analyzing historical and current data and generating a model to help predict future outcomes, which means using a given voter's profile/data to predict voting on future candidate. 
 
 I would like to say second one is inferential, because there is no historical and current data that can generating a model to help predict future outcomes.

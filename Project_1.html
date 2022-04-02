@@ -357,19 +357,13 @@ pre code {
 <h2>R Markdown</h2>
 <p>Question 1: Supervised learning is the machine learning task of learning a function that maps an input to an output based on example input-output pairs. Unsupervised learning is a type of algorithm that learns patterns from untagged data. For Supervised learning, for each observation of predictor measurements(s) xi, i = 1,…,n there is an associated response measurement yi. We wish to fit a model that relates the response to the predictors, with the aim of accurately predicting the response for future observartions or better understanding the relationship between the response and the predictors(page #26 of book). By contrast, unsupervised learning describes the somewhat more challenging situation in which for every observation i = 1, …,n, we observe a vector of measurement xi, but no associated response yi (page #26 of book).Supervised learning methods such as Linear regresssion, Logistic regression, k-nearest(. However, unsupervised learning is not possible to fit linear regression model, since there is no response varaible to predict(page #26 of book.)</p>
 <p>Question 2: According to Regression model, Y is quantitative, which is Numerical values, for example price, blood, and pressure. According to Classification model, Y is qualitative, which is categorical values for example survived/died, spam/not spam (Lecture 2). However, the distinction is not always that crisp(page #28 of book.). Least squares linear regression is used with a quantitative response, whereas logistic regression is typically used with a qualitative response. Thus, despite its name, logistic regression is a classification method(page #28 of book.). But since it estimates class probabilities, it can be taught of as a regression method as well(page #28 of book.)</p>
-<ol start="4" style="list-style-type: decimal">
-<li>Predictive : Aim is to predict Y with minimum reducible error, and not focused on hypothesis tests.</li>
-</ol>
+<p>Question 4. Predictive : Aim is to predict Y with minimum reducible error, and not focused on hypothesis tests.</p>
 <p>Descriptive : Choose model to best visually emphasize a trend in data, for example using a line on a scatterplot</p>
 <p>Inferential : Aim is to test theories, and state relationship between outcome &amp; predictor.</p>
-<ol start="5" style="list-style-type: decimal">
-<li>mechanistic model predicts the future based on a theory. An empirical model, sometimes called statistical model, relies on observation rather than theory. The idea is that if you observe some particular outcome following some particular circumstance then you can reliable predict that outcome in the future. Both of models are able to accurately predict the future.</li>
-</ol>
+<p>Question 5. mechanistic model predicts the future based on a theory. An empirical model, sometimes called statistical model, relies on observation rather than theory. The idea is that if you observe some particular outcome following some particular circumstance then you can reliable predict that outcome in the future. Both of models are able to accurately predict the future.</p>
 <p>mechanistic parametric is easier to understand because it is hard to understand when there is many variable, just like empirically driven model is much more flexible by default and being non-parametric.</p>
 <p>In statistics and machine learning, the bias–variance tradeoff is the property of a model that the variance of the parameter estimated across samples can be reduced by increasing the bias in the estimated parameters. over fitting means low variance and high bias. So, Empirically driven model, which is more flexible, has low variance and high bias. The reason why is the high flexibility indicate the posibbility of over fitting. Oppositly, mechanistic model such as linear/logistic model are less flexible compare to empirically driven model, so they have high variance and low bias.</p>
-<ol start="6" style="list-style-type: decimal">
-<li>I would like to say first one is predictive because predictive modeling solutions are a form of data-mining technology that works by analyzing historical and current data and generating a model to help predict future outcomes, which means using a given voter’s profile/data to predict voting on future candidate.</li>
-</ol>
+<p>Question 6. I would like to say first one is predictive because predictive modeling solutions are a form of data-mining technology that works by analyzing historical and current data and generating a model to help predict future outcomes, which means using a given voter’s profile/data to predict voting on future candidate.</p>
 <p>I would like to say second one is inferential, because there is no historical and current data that can generating a model to help predict future outcomes.</p>
 <pre class="r"><code>library(ggplot2)</code></pre>
 <p>#1</p>
@@ -383,7 +377,7 @@ pre code {
 <pre class="r"><code>install.packages(&quot;forcats&quot;, repos = &quot;http://cran.us.r-project.org&quot;)</code></pre>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/mg/zpsxq8c54h5bbjbf8bny8xym0000gn/T//Rtmp4zSw5n/downloaded_packages</code></pre>
+##  /var/folders/mg/zpsxq8c54h5bbjbf8bny8xym0000gn/T//RtmpDhwjOK/downloaded_packages</code></pre>
 <pre class="r"><code>library(forcats)
 library(ggplot2)
 library(tidyverse)</code></pre>
@@ -410,7 +404,7 @@ library(tidyverse)</code></pre>
 <pre class="r"><code>install.packages(&quot;corrplot&quot;,repos = &quot;http://cran.us.r-project.org&quot;)</code></pre>
 <pre><code>## 
 ## The downloaded binary packages are in
-##  /var/folders/mg/zpsxq8c54h5bbjbf8bny8xym0000gn/T//Rtmp4zSw5n/downloaded_packages</code></pre>
+##  /var/folders/mg/zpsxq8c54h5bbjbf8bny8xym0000gn/T//RtmpDhwjOK/downloaded_packages</code></pre>
 <pre class="r"><code>library(corrplot)</code></pre>
 <pre><code>## corrplot 0.92 loaded</code></pre>
 <pre class="r"><code>M = cor(mpg %&gt;% dplyr::select(where(is.numeric)))
