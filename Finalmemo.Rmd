@@ -1,0 +1,58 @@
+---
+title: "Final_memo"
+output: html_document
+---
+
+Final memo
+
+
+
+/*An overview of my dataset*/
+/*my dataset include feature.csv,stores.csv, test.csv, train.csv that contains 45 walmart stores located in different regions to predicting the weekly sales for each store*/ 
+
+/*I found the data sources from kaggle and going to obtaining these each data by using read.csv*/
+
+/*link : https://www.kaggle.com/code/caioquini/walmart-sales-forecasting/data*/
+
+/*there are two data sets are observations, and two data sets are predictors */
+
+/*I am going to work with variables of Store, Temperature, weekly_sales, Fuel_price, but it might can change by I am working on them */
+
+/*There few  missing data and gonna use them by changing it to na.*/
+
+
+/*I am interesting in predicting future weekly sales varialbes, and interesting in how much holiday varialbe can affect the weekly sales varialbe */
+
+/*Weekly_sales: Thre sales recorded during that week, IsHoliday:Boolean value representing a holiday week or not, Unemployment: The unemployment rate during that week in the region of store, Tmperature : Temperature of the region during that week */
+
+
+/*This is a regression problem */
+
+
+/*I think regression will be more useful because regression estimates exactly how much Y will change when X changes by a certain amount. Such as Sales by week value will be different if the tepemrature is different because there will be more people who would like to grocery shopping when the weather doesnt rainning */
+
+
+/*my goal of model is predictive because in a predictive model, it identify patterns found in past and transactional data to find risks and future outcomes */
+
+
+
+/*I am starting to beginning my exploratory data analysis by week 3 and starting to data visualization on week4, and modelling on week 7, and model checking on week 8, and evaluation of model using test data on week9, and summary with checking on the last of week. */
+
+
+/*Since I have not actually start the project yet, I could not find any difficulties*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
